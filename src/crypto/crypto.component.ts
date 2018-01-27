@@ -18,7 +18,15 @@ import 'rxjs/add/observable/throw';
 export class CryptoComponent implements OnInit, AfterViewInit {
 
   // Columns name to be displayed in the table
-  displayedColumns = ['rank', 'name', 'symbol', 'price_usd', 'percent_change_1h', 'percent_change_24h', 'percent_change_7d'];
+  displayedColumns = [
+    'rank',
+    'name',
+    'symbol',
+    'price_usd',
+    // 'percent_change_1h',
+    // 'percent_change_24h',
+    // 'percent_change_7d'
+  ];
 
   dataSource = new MatTableDataSource();
 
