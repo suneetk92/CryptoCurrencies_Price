@@ -1,0 +1,63 @@
+<nav>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Crypto Currencies Rates</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</nav>
+
+
+<div class="crypto-loading-shade" *ngIf="isLoadingResults">
+  <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+</div>
+
+<div class="crypto-container mat-elevation-z8">
+  <div class="crypto-header">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+    </mat-form-field>
+  </div>
+
+  <mat-table #table [dataSource]="dataSource" class="crypto-table" matSort matSortActive="rank" matSortDirection="asc">
+    <ng-container matColumnDef="rank">
+      <mat-header-cell *matHeaderCellDef mat-sort-header disableClear="true">Rank</mat-header-cell>
+      <mat-cell *matCellDef="let row" fxFlex="60px">{{ row.rank }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+      <mat-cell *matCellDef="let row"><a [href]="applyURL(row.id)">{{ row.name }}</a></mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="symbol">
+      <mat-header-cell *matHeaderCellDef>Symbol</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.symbol }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="price_usd">
+      <mat-header-cell *matHeaderCellDef mat-sort-header disableClear="false">Price (USD)</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.price_usd}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="percent_change_1h">
+      <mat-header-cell *matHeaderCellDef mat-sort-header disableClear="false">change in 1 hour</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.percent_change_1h }}%</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="percent_change_24h">
+      <mat-header-cell *matHeaderCellDef mat-sort-header disableClear="false">change in 24 hours</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.percent_change_24h }}%</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="percent_change_7d">
+      <mat-header-cell *matHeaderCellDef mat-sort-header disableClear="false">change in 7 days</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.percent_change_7d }}%</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+  </mat-paginator>
+</div>
