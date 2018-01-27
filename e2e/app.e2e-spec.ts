@@ -1,4 +1,4 @@
-import { CryptoPage } from './app.po';
+import {CryptoPage} from './app.po';
 
 describe('crypto App', () => {
   let page: CryptoPage;
@@ -7,8 +7,8 @@ describe('crypto App', () => {
     page = new CryptoPage();
   });
 
-  it('should display welcome message', () => {
+  it('should have title', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getText()).toEqual('Hello');
   });
 });

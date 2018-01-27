@@ -1,14 +1,14 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {CryptoService} from './crypto.service';
+import {CryptoData} from './cryptoData';
 import {Observable} from 'rxjs/Observable';
+import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import 'rxjs/add/observable/interval';
 import 'rxjs/add/operator/timeInterval';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
-import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
-import {CryptoData} from './cryptoData';
 
 @Component({
   selector: 'app-root',

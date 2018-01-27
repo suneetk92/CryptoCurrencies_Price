@@ -8,19 +8,7 @@ import {HttpClientModule} from '@angular/common/http';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
-import {
-  MatButtonModule,
-  MatCheckboxModule,
-  MatIconModule,
-  MatMenuModule,
-  MatToolbarModule,
-  MatPaginatorModule,
-  MatSortModule,
-  MatProgressSpinnerModule,
-  MatFormFieldModule,
-  MatInputModule
-} from '@angular/material';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, MatSortModule, MatToolbarModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -31,17 +19,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     HttpClientModule,
     BrowserAnimationsModule,
     MatTableModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatIconModule,
-    MatMenuModule,
     MatToolbarModule,
     MatPaginatorModule,
     MatSortModule,
     MatProgressSpinnerModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
     MatInputModule
   ],
   providers: [CryptoService],
