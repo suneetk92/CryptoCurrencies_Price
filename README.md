@@ -1,6 +1,8 @@
 # Crypto
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
+
+This project shows the current crypto currencies rates in a tabular form. `[Collecting data from coinmarketcap]`
 
 ## Development server
 
